@@ -1,68 +1,76 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <style>
+    .card-img-top {
+      width: 100%;
+      height: 200px; /* Set a fixed height for the images */
+      object-fit: contain; /* This ensures the images maintain their aspect ratio while covering the entire area */
+    }
+  </style>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-    <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+      <div class="container-fluid">
+        <h2 style="padding-right: 5%;">Dealerships</h2>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
-        </div>
-      </div>
-    </div>
-    </div>
-    </div>
+    </nav>
     
-</div>
+    <div class="card" style="width: 80%; margin: auto; margin-top: 5%;">
+      <div class="banner" name="about-header">
+        <h1>About Us</h1>
+        Welcome to Best Cars dealership, where every car is a national treasure, and every deal feels like a high-octane adventure. We deal in the sale of domestic and imported cars at reasonable prices.
+      </div>
+      <div style="display: flex; flex-direction: row; margin: auto;">
+        <div class="card" style="width: 30%; margin: 1%;">
+          <img class="card-img-top" src="https://www.digitaltrends.com/wp-content/uploads/2023/05/Nicolas_Cage_Superman_Lives.jpg?fit=720%2C458&p=1" alt="Nicholas Cage as Superman">
+          <div class="card-body">
+            <p class="title">Clark Kent</p>
+            <p>General Manager</p>
+            <p class="card-text">Clark Kent is our General Manager, known for his strong leadership and dedication to providing the best service to our customers.</p>
+            <p>clark.kent@example.com</p>
+          </div>
+        </div>
 
+        <div class="card" style="width: 30%; margin: 1%;">
+          <img class="card-img-top" src="https://pbs.twimg.com/media/A_VUWNnCUAAcosE.jpg" alt="Nicholas Cage making a crazy face">
+          <div class="card-body">
+            <p class="title">John Travolta</p>
+            <p>Sales Director</p>
+            <p class="card-text">John Travolta, our Sales Director, brings enthusiasm and energy to our sales team, ensuring every customer finds their perfect car.</p>
+            <p>john.travolta@example.com</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 30%; margin: 1%;">
+          <img class="card-img-top" src="https://i.guim.co.uk/img/media/a56bcd24caddbf7397e21cf22ddc9d39b494c8b9/0_99_3000_1800/master/3000.jpg?width=1900&dpr=1&s=none" alt="Nicholas Cage being startled in Dream Scenario">
+          <div class="card-body">
+            <p class="title">Benjamin Gates</p>
+            <p>Customer Service Manager</p>
+            <p class="card-text">Benjamin Gates heads our Customer Service team, always ready to assist with any inquiries and ensure a smooth experience for our clients.</p>
+            <p>benjamin.gates@example.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
