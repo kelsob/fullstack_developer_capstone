@@ -1,4 +1,5 @@
 # Uncomment the required imports before adding the code
+from .models import CarMake, CarModel
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
@@ -76,6 +77,17 @@ def register_user(request):
     else :
         data = {"userName":username,"error":"Already Registered"}
         return JsonResponse(data)
+
+def get_cars(request):
+    count = CarMake.objects.filter().count()
+    print(count)
+    if(count == 0):
+        initiate()
+    car_models = CarModel.objects.select_related('carmake')
+    cars = []
+    for car_model in car_models:
+        cars.append({"CarModel": car_model.name, "CarMake": car_model.carmake.name})
+    return JsonResponse({"CarModels":cars})
 
 # # Update the `get_dealerships` view to render the index page with
 # a list of dealerships
