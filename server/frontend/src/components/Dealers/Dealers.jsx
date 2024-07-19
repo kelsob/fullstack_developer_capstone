@@ -27,6 +27,8 @@ const Dealers = () => {
   }
 
   const get_dealers = async ()=>{
+    print("getting dealers")
+    console.log("getting dealers, console log")
     const res = await fetch(dealer_url, {
       method: "GET"
     });
