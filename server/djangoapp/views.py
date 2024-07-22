@@ -3,15 +3,12 @@ from .models import CarMake, CarModel
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
 
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.http import JsonResponse
 from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.models import User
-from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 import logging
 import json
-from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +24,7 @@ def login_user(request):
         login(request, user)
         data = {"userName": username, "status": "Authenticated"}
     return JsonResponse(data)
+
 
 def logout_request(request):
     logout(request)
@@ -71,7 +69,8 @@ def get_cars(request):
     if count == 0:
         initiate()
     car_models = CarModel.objects.select_related('carmake')
-    cars = [{"CarModel": car_model.name, "CarMake": car_model.carmake.name} for car_model in car_models]
+    cars = [{"CarModel": car_model.name,
+             "CarMake": car_model.carmake.name} for car_model in car_models]
     return JsonResponse({"CarModels": cars})
 
 
