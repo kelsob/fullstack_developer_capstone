@@ -2,6 +2,11 @@ import LoginPanel from "./components/Login/Login"
 import RegisterPanel from "./components/Register/Register"
 import { Routes, Route } from "react-router-dom";
 import Dealers from './components/Dealers/Dealers';
+<<<<<<< HEAD
+=======
+import Dealer from "./components/Dealers/Dealer"
+import PostReview from "./components/Dealers/PostReview"
+>>>>>>> update
 
 
 function App() {
@@ -10,6 +15,13 @@ function App() {
       <Route path="/login" element={<LoginPanel />} />
       <Route path="/register" element={<RegisterPanel />} />
       <Route path="/dealers" element={<Dealers/>} />
+<<<<<<< HEAD
+=======
+      <Route path="/dealer/:id" element={<Dealer/>} />
+      <Route path="/postreview/:id" element={<PostReview/>} />
+
+
+>>>>>>> update
 
     </Routes>
   );

@@ -11,32 +11,52 @@ sentiment_analyzer_url = os.getenv(
     'sentiment_analyzer_url',
     default="http://localhost:5050/")
 
+
 def get_request(endpoint, **kwargs):
     print("getting request")
     params = ""
-    if(kwargs):
-        for key,value in kwargs.items():
-            params=params+key+"="+value+"&"
+    if kwargs:
+        for key, value in kwargs.items():
+            params += f"{key}={value}&"
+        params = params.rstrip("&")  # Remove trailing '&'
 
+<<<<<<< HEAD
     request_url = backend_url+endpoint
 
     if params:
         request_url = request_url+"?"+params
+=======
+    request_url = f"{backend_url}{endpoint}"
+    if params:
+        request_url = f"{request_url}?{params}"
+>>>>>>> update
 
-    print("GET from {} ".format(request_url))
+    print(f"GET from {request_url}")
     try:
         # Call get method of requests library with URL and parameters
         print("trying!")
         response = requests.get(request_url)
+<<<<<<< HEAD
         response.raise_for_status()  # This will raise an HTTPError for bad responses
         return response.json()
     except requests.exceptions.RequestException as e:
         # If any error occurs, print the exception details
+=======
+        
+        print(f"Response status code: {response.status_code}")
+        print(f"Response content: {response.text}")  # Inspect response content
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        # If any error occurs
+>>>>>>> update
         print(f"Network exception occurred: {e}")
         return None
 
 def analyze_review_sentiments(text):
-    request_url = sentiment_analyzer_url+"analyze/"+text
+    request_url = sentiment_analyzer_url+"/analyze/"+text
+    print('attempting to analyze review sentiments')
+    print(request_url)
     try:
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
