@@ -63,7 +63,8 @@ class Migration(migrations.Migration):
                 ),
                 (
                     'carmake', models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to='djangoapp.carmake'
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to='djangoapp.carmake'
                     )
                 ),
             ],
