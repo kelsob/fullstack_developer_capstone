@@ -33,11 +33,10 @@ def get_request(endpoint, **kwargs):
         # Call get method of requests library with URL and parameters
         print("trying!")
         response = requests.get(request_url)
-        response.raise_for_status()  # This will raise an HTTPError for bad responses
+        response.raise_for_status()
         return response.json()
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException:
         # If any error occurs, print the exception details
-        
         print(f"Response status code: {response.status_code}")
         print(f"Response content: {response.text}")  # Inspect response content
         response.raise_for_status()  # Raise an exception for HTTP errors
@@ -46,6 +45,7 @@ def get_request(endpoint, **kwargs):
         # If any error occurs
         print(f"Network exception occurred: {e}")
         return None
+
 
 def analyze_review_sentiments(text):
     request_url = sentiment_analyzer_url+"/analyze/"+text
@@ -59,10 +59,11 @@ def analyze_review_sentiments(text):
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
 
+
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
     try:
-        response = requests.post(request_url,json=data_dict)
+        response = requests.post(request_url, json=data_dict)
         print(response.json())
         return response.json()
     except:
