@@ -54,5 +54,6 @@ def initiate():
 
     for data in car_model_data:
         CarModel.objects.create(
-            name=data['name'], carmake=data['carmake'], cartype=data['cartype'], year=data['year']
+            name=data['name'], carmake=data['carmake'],
+            cartype=data['cartype'], year=data['year']
         )
