@@ -37,9 +37,13 @@ class Migration(migrations.Migration):
                 (
                     'cartype', models.CharField(
                         choices=[
-                            ('SEDAN', 'Sedan'), ('SUV', 'SUV'), ('COUPE', 'Coupe'),
-                            ('HATCHBACK', 'Hatchback'), ('STATIONWAGON', 'Station Wagon'),
-                            ('TRUCK', 'Truck'), ('VAN', 'Van'), ('CONVERTIBLE', 'Convertible'),
+                            ('SEDAN', 'Sedan'),
+                            ('SUV', 'SUV'),
+                            ('COUPE', 'Coupe'),
+                            ('HATCHBACK', 'Hatchback'),
+                            ('STATIONWAGON', 'Station Wagon'),
+                            ('TRUCK', 'Truck'), ('VAN', 'Van'),
+                            ('CONVERTIBLE', 'Convertible'),
                             ('CROSSOVER', 'Crossover')
                         ],
                         default='SEDAN', max_length=12
@@ -65,4 +69,3 @@ class Migration(migrations.Migration):
             ],
         ),
     ]
-
