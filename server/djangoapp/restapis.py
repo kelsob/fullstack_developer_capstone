@@ -64,7 +64,7 @@ def post_review(data_dict):
     request_url = backend_url + "/insert_review"
     try:
         response = requests.post(request_url, json=data_dict)
-        response.raise_for_status()  # This will raise an HTTPError for bad responses
+        response.raise_for_status()
         print(response.json())
         return response.json()
     except requests.exceptions.RequestException as e:
