@@ -31,8 +31,8 @@ class CarModel(models.Model):
         ("CROSSOVER", "Crossover")
         )
     cartype = models.CharField(max_length=12,
-                                choices=TYPES,
-                                default="SEDAN")
+                               choices=TYPES,
+                               default="SEDAN")
 
     name = models.CharField(max_length=100)
     description = models.TextField()
