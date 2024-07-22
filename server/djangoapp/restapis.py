@@ -20,28 +20,23 @@ def get_request(endpoint, **kwargs):
             params += f"{key}={value}&"
         params = params.rstrip("&")  # Remove trailing '&'
 
-<<<<<<< HEAD
     request_url = backend_url+endpoint
 
     if params:
         request_url = request_url+"?"+params
-=======
     request_url = f"{backend_url}{endpoint}"
     if params:
         request_url = f"{request_url}?{params}"
->>>>>>> update
 
     print(f"GET from {request_url}")
     try:
         # Call get method of requests library with URL and parameters
         print("trying!")
         response = requests.get(request_url)
-<<<<<<< HEAD
         response.raise_for_status()  # This will raise an HTTPError for bad responses
         return response.json()
     except requests.exceptions.RequestException as e:
         # If any error occurs, print the exception details
-=======
         
         print(f"Response status code: {response.status_code}")
         print(f"Response content: {response.text}")  # Inspect response content
@@ -49,7 +44,6 @@ def get_request(endpoint, **kwargs):
         return response.json()
     except requests.exceptions.RequestException as e:
         # If any error occurs
->>>>>>> update
         print(f"Network exception occurred: {e}")
         return None
 
